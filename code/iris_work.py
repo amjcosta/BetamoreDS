@@ -10,11 +10,14 @@ import numpy as np
 iris = load_iris()
 
 # what do you think these attributes represent?
-iris.data
-iris.data.shape
-iris.feature_names
-iris.target
-iris.target_names
+iris.data # this is the array of array holding the data
+iris.data.shape # returns size of data as (number rows, number columns)
+iris.feature_names # list of names of x-variables
+iris.target # The array containing the target data (y-variable)
+iris.target_names # Description of what the target data means:
+					# 0 is setosa
+					# 1 is versicolor
+					# 2 is virginica
 
 # intro to numpy
 type(iris.data)
@@ -28,7 +31,9 @@ iris.feature_names
 # at the end and replace any spaces with an underscore
 # create a list called "features" that 
 # holds the cleaned column names
-features = [] # <FILL IN>
+
+# TODO: program this for very large datasets
+features = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
 
 
 # read the iris data into pandas, with our refined column names
@@ -50,8 +55,18 @@ species ==
  'virginica']
 Hint: use the iris.target_names and iris.target arrays
 '''
-species = [] # <FILL IN>
-
+species = [] 
+i = 0
+for i in range(iris.target.size):
+	if iris.target[i] == 0:
+		species.append('setosa')
+		i += 1
+	elif iris.target[i] == 1:
+		species.append('versicolor')
+		i += 1
+	else:
+		species.append('virginica')
+		i += 1
 
 
 # add the species list as a new DataFrame column

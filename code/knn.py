@@ -25,16 +25,16 @@ iris_data ==
         plus the species
 '''
 
-iris_data = pd.read_csv('https://raw.githubusercontent.com/hunterusf/betamoreds/iris.csv')
+iris_data = pd.read_csv('/Users/amy/Betamore/BetamoreDS/data/iris.csv')
 # iris_data is a dataframe, but let's turn it into
 # a 2D numpy array
 # Hint: use .values to turn a dataframe into a 2d array
 
-iris_data = np.array([]) #<FILL IN>
+iris_data = np.array([iris_data.values]) 
 
 # Question: in terms of machine learning:
-#   a. the first four columns are called what?
-#   b. the species column is called what?
+#   a. the first four columns are called what? feature or predictor variables
+#   b. the species column is called what? target or response variable
 
 iris_data
 '''
@@ -64,6 +64,11 @@ k = 3
 # (euc_distance(unknown, data_point), species)
 # for each data_point in iris_data
 distances = [] # <FILL IN>
+i = 0
+for i in range(iris_data.size):
+  tuple = (euc_distance(unknown,))
+  distances.append(tuple)
+  i += 1
 
 distances
 '''
